@@ -1,0 +1,259 @@
+$primary-light-color: #00756c;
+$primary-dark-color: #216cddd8;
+$background-light-color: #f0f0f0;
+$background-dark-color: #2c2c2c;
+$primary-text-light-color: #2c2c2c;
+$primary-text-dark-color: #f8f8f8;
+$secondary-text-light-color: #464646;
+$secondary-text-dark-color: #bdbdbd;
+$sub-text-light-color: #585858;
+$sub-text-dark-color: #a09f9f;
+$card-light-color: #f3f3f3;
+$card-dark-color: #3b3b3b;
+
+$layout-padding: 0 5%;
+
+@mixin background-theme($light-theme: true) {
+    @if $light-theme{
+        background: $background-light-color;
+    } @else {
+        background: $background-dark-color;
+    }
+}
+
+@mixin primary-theme($light-theme: true) {
+    @if $light-theme{
+        color: $primary-light-color;
+    } @else {
+        color: $primary-dark-color;
+    }
+}
+
+@mixin primary-theme-background($light-theme: true) {
+    @if $light-theme{
+        background: $primary-light-color;
+    } @else {
+        background: $primary-dark-color;
+    }
+}
+
+@mixin primary-text($light-theme: true) {
+    @if $light-theme{
+        color: $primary-text-light-color;
+    } @else {
+        color: $primary-text-dark-color;
+    }
+}
+
+@mixin secondary-text($light-theme: true) {
+    @if $light-theme{
+        color: $secondary-text-light-color;
+    } @else {
+        color: $secondary-text-dark-color;
+    }
+}
+
+@mixin sub-text($light-theme: true) {
+    @if $light-theme{
+        color: $sub-text-light-color;
+    } @else {
+        color: $sub-text-dark-color;
+    }
+}
+
+@mixin card($light-theme: true) {
+    @if $light-theme{
+        background: $card-light-color;
+    } @else {
+        background: $card-dark-color;
+    }
+}
+
+.background-light {
+    @include background-theme($light-theme: true)
+}
+
+.background-dark {
+    @include background-theme($light-theme: false)
+}
+
+.primary-light {
+    @include primary-theme($light-theme: true)
+}
+
+.primary-dark {
+    @include primary-theme($light-theme: false)
+}
+
+.primary-light-background {
+    @include primary-theme-background($light-theme: true)
+}
+
+.primary-dark-background {
+    @include primary-theme-background($light-theme: false)
+}
+
+.primary-text-light {
+    @include primary-text($light-theme: true)
+}
+
+.primary-text-dark {
+    @include primary-text($light-theme: false)
+}
+
+.secondary-text-light {
+    @include secondary-text($light-theme: true)
+}
+
+.secondary-text-dark {
+    @include secondary-text($light-theme: false)
+}
+
+.sub-text-light {
+    @include sub-text($light-theme: true)
+}
+
+.sub-text-dark {
+    @include sub-text($light-theme: false)
+}
+
+.card-light {
+    @include card($light-theme: true);
+}
+
+.card-dark {
+    @include card($light-theme: false);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    padding: $layout-padding;
+}
+
+code {
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    padding-left: 0;
+    transition: 0.5s;
+}
+
+.app.expanded {
+    padding-left: 15vw;
+}
+
+.app-body {
+    padding-left: 5vw;
+    padding-top: 5vh;
+}
+
+// Sidebar ----------------------------------------------------
+.sidebar-container {
+    width: 5vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.sidebar-container.expanded {
+    width: 20vw;
+}
+
+.sidebar-container:hover {
+    width: 20vw;
+}
+
+.sidebar-container:hover > #ltbi_body {
+    padding: 20vw 0;
+}
+
+.sidebar-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-item a {
+    width: 90%;
+    padding: 10px 0;
+    display: flex;
+}
+
+.sidebar-item img {
+    width: 3vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.sidebar-item-text {
+    max-width: 15vw;
+    width: 0;
+    overflow: auto;
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-container:hover .sidebar-item a .sidebar-item-text {
+    width: 15vw;
+}
+
+.sidebar-container.expanded .sidebar-item a .sidebar-item-text {
+    width: 15vw;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    width: 2vw;
+    top: 2vh;
+    right: -3vw;
+}
+
+.sidebar-shrink {
+    padding-left: 0v
+}
+
+.sidebar-expanded {
+    padding-left: 15vw;
+}
+
+//Header-----------------------------------
+
+.header-container {
+    width: 100vw;
+    top: 0;
+    height: 8vh;
+    padding-left: 1vw;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.header-container svg {
+    cursor: pointer;
+    fill: white;
+}
+
+//Card--------------------------------------
+
+.card {
+    padding: 10px;
+    box-shadow: 0px 0px 5px lightgrey;
+    border-radius: 5px;
+}
