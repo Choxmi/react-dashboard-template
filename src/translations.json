@@ -1,3 +1,18 @@
 {
-    "title": ["Title","ශීර්ෂය","தலைப்பு"]
+    "title": ["Title","ශීර්ෂය","தலைப்பு"],
+    "screening_record": {
+        "step1": {
+            "title": ["General Information","General Information","General Information"],
+            "card": ["District LTBI screening no/Standard card no:","District LTBI screening no/Standard card no:","District LTBI screening no/Standard card no:"],
+            "name": ["Name of the patient","Name of the patient","Name of the patient"],
+            "dob": ["Date of birth","Date of birth","Date of birth"],
+            "age": ["Age","Age","Age"],
+            "sex": ["Sex","Sex","Sex"],
+            "male": ["Male","Male","Male"],
+            "female": ["Female","Female","Female"],
+            "contact": ["Contact number","Contact number","Contact number"],
+            "address": ["Complete address","Complete address","Complete address"],
+            "past": ["Past TB history","Past TB history","Past TB history"]
+        }
+    }
 }
